@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Sistem Komputer & Motherboard</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #111111;
+            --white: #ffffff;
+            --light-gold: #fdfaf2;
+            --gray: #f5f5f5;
+            --radius: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--black), #2c2c2c);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+            border-bottom-left-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            color: var(--gold);
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .main-structure {
+            background-color: var(--light-gold);
+            border: 2px solid var(--gold);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(212,175,55,0.1);
+        }
+
+        .main-structure h2 {
+            color: var(--black);
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .main-structure ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .main-structure li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .main-structure li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border: 2px solid var(--black);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 12px 25px rgba(212,175,55,0.25);
+        }
+
+        .card-header {
+            background-color: var(--black);
+            color: var(--gold);
+            padding: 15px 20px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 180px;
+            background-color: var(--gray);
+            border-radius: calc(var(--radius) - 5px);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            margin-top: auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border: 1px solid var(--gold);
+        }
+
+        .sub-section {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ccc;
+        }
+
+        .sub-title {
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            border-top: 5px solid var(--gold);
+        }
+
+        footer p span {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Struktur Sistem Komputer & Komponen Motherboard</h1>
+        <p>Eksplorasi Interaktif Komponen Utama Perangkat Keras Komputer Modern</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Struktur Utama -->
+        <div class="main-structure">
+            <h2>Komponen Utama Sistem Komputer</h2>
+            <ul>
+                <li><strong>Processor:</strong> Pusat pengendali jalannya komputer. Jika hanya terdapat satu inti/unit pemrosesan tunggal, disebut sebagai <strong>CPU</strong> (Central Processing Unit).</li>
+                <li><strong>Main Memory:</strong> Media penyimpanan internal berkecepatan tinggi yang menyimpan data dan instruksi program aktif saat komputer beroperasi.</li>
+                <li><strong>I/O Modules:</strong> Modul penghubung internal sistem komputer dengan segala bentuk perangkat keras eksternal (periferal).</li>
+                <li><strong>System Interconnection:</strong> Infrastruktur jalur komunikasi data bus yang mengaitkan hubungan antar ketiga komponen di atas.</li>
+            </ul>
+        </div>
+
+        <!-- Grid Komponen Motherboard -->
+        <div class="grid">
+
+            <!-- 1. Konektor Power Supply -->
+            <div class="card">
+                <div class="card-header">1. Konektor Power Supply</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Pin yang menyambungkan Motherboard dengan power supply di casing komputer. 
+                        <div class="sub-section">
+                            <div class="sub-title">Tipe AT & ATX:</div>
+                            Pada tipe AT lama, kabel terdiri dari dua bagian terpisah. Sedangkan pada tipe ATX modern, kabel telah menyatu dalam satu header utuh berlarik ganda yang aman dan presisi.
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/1.jpg" alt="Konektor Power Supply" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#aaa;font-size:0.9rem;\'>Foto: Konektor Power Supply (D:/adrian/1.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Socket atau Slot Prosesor -->
+            <div class="card">
+                <div class="card-header">2. Socket atau Slot Prosesor</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Dudukan khusus untuk menancapkan prosesor (Intel, AMD, Cyrix).
+                        <div class="sub-section">
+                            <div class="sub-title">Perkembangan Generasi:</div>
+                            Mulai dari model ZIF Socket 7 lawas (233 MHz), sistem Slot 1/Slot A berbentuk papan tegak, Socket 478 (Pentium 4), hingga arsitektur server LGA 2011 yang mendukung 4 memori channel dan 40 jalur PCIe 3.0.
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/11.jpg" alt="Socket Prosesor" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#aaa;font-size:0.9rem;\'>Foto: Socket Prosesor (D:/adrian/11.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Chipset -->
+            <div class="card">
+                <div class="card-header">3. Chipset (North & Southbridge)</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Bertindak sebagai jembatan arus data vital yang menghubungkan processor dengan komponen eksternal dan buses ekspansi. 
+                        <div class="sub-section">
+                            <div class="sub-title">Southbridge:</div>
+                            Membantu komponen utama (Northbridge) untuk menangani lalu lintas data periferal berkecepatan lebih rendah.
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/111.jpg" alt="Chipset" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#aaa;font-size:0.9rem;\'>Foto: Chipset (D:/adrian/111.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. System-on-Chip (SoC) -->
+            <div class="card">
+                <div class="card-header">4. System-on-Chip (SoC)</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Inovasi terintegrasi di mana Northbridge, Southbridge, serta perangkat keras tambahan (seperti modul VGA dan modem) sudah tertanam langsung secara terpadu (on-board) di dalam satu silikon chip sistem tunggal.
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/22.jpg" alt="System on Chip" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style='color:#aaa;font-size:0.9rem;'>Foto: System-on-Chip (D:/adrian/22.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Socket Memori -->
+            <div class="card">
+                <div class="card-header">5. Socket & Generasi Memori</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Slot RAM satu arah dengan galur pengunci presisi agar modul tidak terbalik saat dipasang.
+                        <div style="margin: 10px 0;">
+                            <span class="badge">SIMM 72-Pin</span><span class="badge">SDRAM 168-Pin</span>
+                            <span class="badge">DDR</span><span class="badge">DDR2</span>
+                            <span class="badge">DDR3</span><span class="badge">DDR4</span><span class="badge">DDR5</span>
+                        </div>
+                        <div class="sub-section">
+                            <div class="sub-title">DDR4 & DDR5:</div>
+                            DDR4 menawarkan efisiensi daya hingga 3200MHz. Sedangkan generasi DDR5 melompat masif dengan densitas ekstrem mendukung kapasitas di atas 128GB per keping.
+                        </div>
+                    </div>
+                    <div class="image-container" style="gap: 5px; background: transparent; border: none;">
+                        <img src="D:/adrian/222.jpg" alt="RAM Slot 1" style="width: 49%; height: 100%; object-fit: cover; border-radius: 10px; border: 1px solid #ddd;" onerror="this.style.display='none';">
+                        <img src="D:/adrian/qq.jpg" alt="RAM Slot 2" style="width: 49%; height: 100%; object-fit: cover; border-radius: 10px; border: 1px solid #ddd;" onerror="this.style.display='none';">
+                        <div style="position: absolute; color: #aaa; font-size: 0.85rem; pointer-events: none; text-align: center; width: 100%; z-index: -1;">Foto Memori (D:/adrian/222.jpg & qq.jpg)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Konektor Floppy dan IDE / SATA -->
+            <div class="card">
+                <div class="card-header">6. Konektor Floppy, IDE & SATA</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Port khusus penghubung motherboard ke media penyimpanan. 
+                        <div class="sub-section">
+                            <div class="sub-title">SATA (Serial ATA):</div>
+                            Pembaruan mutakhir menggantikan kabel pita paralel (PATA/IDE). Kecepatan transfer melejit hingga 6 Gbps dan dilengkapi fitur mutakhir *hot-swapping*.
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/zz.jpg" alt="Konektor SATA IDE" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#aaa;font-size:0.9rem;\'>Foto: Konektor Penyimpanan (D:/adrian/zz.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. BIOS (Basic Input-Output System) -->
+            <div class="card">
+                <div class="card-header">7. BIOS (Basic Input-Output System)</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Chip pengontrol hardware dasar sekaligus antarmuka penghubung komponen fisik dengan Operating System (OS). Berfungsi penting mengawal proses *booting* (startup) serta melakukan pengecekan kesehatan hardware lewat sistem *BIOS Runtime Services*.
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/xx.jpg" alt="BIOS Chip" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#aaa;font-size:0.9rem;\'>Foto: BIOS Chip (D:/adrian/xx.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Slot PCI Express & AGP -->
+            <div class="card">
+                <div class="card-header">8. Slot PCI Express x16, x1 & AGP</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Slot ekspansi penambah modul performa grafis dan periferal eksternal.
+                        <div class="sub-section">
+                            <strong>PCIe x16:</strong> Khusus untuk kartu VGA mutakhir.<br>
+                            <strong>PCIe x1:</strong> Untuk kartu aksesoris (wi-fi/sound card).<br>
+                            <strong>AGP Slot:</strong> Port grafis lawas akselerator data sebelum digantikan teknologi PCIe.
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/xxx.jpg" alt="Slot Ekspansi" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#aaa;font-size:0.9rem;\'>Foto: Slot Ekspansi (D:/adrian/xxx.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Konektor Penghubung Periferal -->
+            <div class="card">
+                <div class="card-header">9. Connectors For Integrated Peripherals</div>
+                <div class="card-body">
+                    <div class="card-text" style="font-size: 0.9rem;">
+                        Rangkaian port I/O di bagian panel belakang motherboard:
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 5px;">
+                            <div>• <strong>Port USB:</strong> Universal modern</div>
+                            <div>• <strong>Port VGA:</strong> Output layar lama</div>
+                            <div>• <strong>Port Paralel/Serial:</strong> Printer tua</div>
+                            <div>• <strong>Port Audio:</strong> Suara & mic</div>
+                            <div>• <strong>Port AT/PS2:</strong> Mouse/KB bulat</div>
+                            <div>• <strong>Port LAN/Firewire:</strong> Jaringan</div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/mmk.jpg" alt="Konektor Periferal" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#aaa;font-size:0.9rem;\'>Foto: Konektor Periferal (D:/adrian/mmk.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Battery CMOS & Port Digital -->
+            <div class="card">
+                <div class="card-header">10. Battery CMOS & Port Display Modern</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <div class="sub-title">Baterai CMOS:</div>
+                        Menyuplai daya mandiri kontinu agar chip jam internal RTC (Real Time Clock) dan memori konfigurasi setup BIOS tidak terhapus saat arus listrik utama padam.
+                        <div class="sub-section">
+                            <div class="sub-title">Port DVI & HDMI:</div>
+                            Interface tampilan video display digital berdefinisi tinggi untuk monitor, proyektor, serta TV modern.
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="D:/adrian/mmkkk.jpg" alt="Baterai CMOS & HDMI" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#aaa;font-size:0.9rem;\'>Foto: CMOS & Port Display (D:/adrian/mmkkk.jpg)</span>'">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Sistem Komputer &copy; 2026. Didesain Khusus dengan Kombinasi Tema Warna <span>Putih, Emas, dan Hitam</span>.</p>
+    </footer>
+
+</body>
+</html>
